@@ -1,35 +1,27 @@
 import { useState } from "react";
+import Auth from "./component/Auth";
 
 function App() {
-  const [number, setNumber] = useState(0);
-
-  const onCountUpClick = () => {
-    setNumber((curentNumber) => {
-      return (curentNumber += 1);
-    });
-  };
-
   return (
-    <div className="App">
-      <div className="nav border-b">
-        <div className="container px-4 max-w-screen-md mx-auto flex justify-between items-center">
-          <div className="logo my-4 w-12 text-lg font-semibold">logo</div>
-          <div className="menu flex items-center space-x-2">
-            <div className="item hover:bg-yellow-500">item 1</div>
-            <div className="item">item 2</div>
-            <div className="item">item 3</div>
-            <div className="item">item 4</div>
+    <div className="App flex">
+      <div className="min-w-screen-sm h-screen w-1/2 bg-blue-300"></div>
+      <div className="min-w-screen-sm h-screen w-1/2 bg-white">
+        <div className="p-24">
+          <div className="logo h-24 w-full text-white">
+            <img
+              className="h-full mx-auto"
+              src="https://cdn.auth0.com/styleguide/components/1.0.8/media/logos/img/logo-grey.png"
+              alt=""
+            />
+          </div>
+          <div className="form py-8 text-center">
+            <div className="title text-xl py-4 font-medium">
+              Hi, welcome back!
+            </div>
+            <Auth />
           </div>
         </div>
       </div>
-      {number}
-      <br />
-      <button
-        onClick={onCountUpClick}
-        className="p-4 border border-blue-500 rounded-full bg-blue-300 text-white ml-4 hover:bg-yellow-500"
-      >
-        Count up
-      </button>
     </div>
   );
 }
